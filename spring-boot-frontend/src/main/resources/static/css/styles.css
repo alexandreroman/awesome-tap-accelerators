@@ -5,6 +5,10 @@
     background-repeat: no-repeat;
 }
 
+.navbar-brand img {
+    margin-right: 4px;
+}
+
 #appInfo {
     list-style-type: square;
     overflow: scroll;

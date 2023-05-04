@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: myapp
+  description: A frontend app powered by Spring Boot
+  tags:
+  - java
+  - spring
+  - web
+  - opentelemetry
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=myapp
+spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team

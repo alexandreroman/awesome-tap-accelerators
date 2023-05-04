@@ -1,0 +1,18 @@
+#banner {
+    background-color: white;
+    background-image: url('/images/banner.png');
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
+#appInfo {
+    list-style-type: square;
+    overflow: scroll;
+}
+
+@media (max-width: 1000px) {
+    #banner {
+        /* Disable banner image when screen size is too small. */
+        background-image: none;
+    }
+}

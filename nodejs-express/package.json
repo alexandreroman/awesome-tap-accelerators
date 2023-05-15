@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-express-frontend",
+  "name": "nodejs-express",
   "version": "0.0.1",
   "description": "A NodeJS/Express frontend serving a Bootstrap backed UI, including OpenTelemetry support",
   "main": "server.js",

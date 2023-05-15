@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: myapp
+  name: nodejs-express
   description: A frontend app powered by NodeJS/Express
   tags:
   - node
@@ -9,7 +9,7 @@ metadata:
   - web
   - opentelemetry
   annotations:
-    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=myapp
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=nodejs-express
 spec:
   type: service
   lifecycle: experimental

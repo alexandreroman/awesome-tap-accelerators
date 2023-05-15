@@ -28,13 +28,13 @@ engine:
       chain:
       - type: ReplaceText
         substitutions:
-        - text: "nodejs-express-frontend"
+        - text: "nodejs-express"
           with: "#projectName"
     - include: [ "catalog/catalog-info.yaml", "config/workload.yaml" ]
       chain:
       - type: ReplaceText
         substitutions:
-        - text: "myapp"
+        - text: "nodejs-express"
           with: "#workloadResourceName"
 
   - merge:

@@ -24,7 +24,7 @@ engine:
   - merge:
     - include: [ "**" ]
       exclude: [ "package.json", "package-lock.json", "catalog/catalog-info.yaml", "config/workload.yaml" ]
-    - include: [ "package.json", "package-lock.json" ]
+    - include: [ "package.json", "package-lock.json", "Tiltfile" ]
       chain:
       - type: ReplaceText
         substitutions:
@@ -36,6 +36,12 @@ engine:
         substitutions:
         - text: "nodejs-express"
           with: "#workloadResourceName"
+
+  - merge:
+    - type: InvokeFragment
+      reference: live-update
+    - include: [ "**" ]
+      onConflict: UseFirst
 
   - merge:
     - type: InvokeFragment

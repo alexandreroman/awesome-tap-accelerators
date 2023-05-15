@@ -10,6 +10,11 @@
     "test": "exit 0"
   },
   "dependencies": {
+    "@opentelemetry/exporter-metrics-otlp-proto": "^0.39.1",
+    "@opentelemetry/exporter-zipkin": "^1.13.0",
+    "@opentelemetry/instrumentation-express": "^0.32.2",
+    "@opentelemetry/instrumentation-http": "^0.39.1",
+    "@opentelemetry/sdk-node": "^0.39.1",
     "bootstrap": "^5.2.3",
     "express": "^4.18.2",
     "jquery": "^3.7.0",

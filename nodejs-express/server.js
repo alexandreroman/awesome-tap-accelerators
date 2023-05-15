@@ -1,8 +1,12 @@
 const express = require('express')
+const mustacheExpress = require('mustache-express');
 const app = express()
-const cons = require('consolidate')
 const path = require('path')
 const os = require('os')
+
+app.engine('mustache', mustacheExpress());
+app.set('view engine', 'mustache');
+app.set('views', path.join(__dirname, '/views'));
 
 function getIPAddress() {
   const interfaces = os.networkInterfaces();
@@ -17,10 +21,6 @@ function getIPAddress() {
   }
   return '0.0.0.0';
 }
-
-app.engine('mustache', cons.mustache);
-app.set('view engine', 'mustache');
-app.set('views', path.join(__dirname, '/views'));
 
 const pkg = require(path.join(__dirname, '/package.json'))
 const appName = pkg.name
@@ -40,6 +40,8 @@ app.get('/health', (req, res) => {
 })
 
 app.use('/css/bootstrap.min.css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css/bootstrap.min.css')))
+app.use('/js/bootstrap.bundle.min.js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')))
+app.use('/js/jquery.slim.min.js', express.static(path.join(__dirname, 'node_modules/jquery/dist/jquery.slim.min.js')))
 app.use(express.static(path.join(__dirname, 'public')))
 
 const port = parseInt(process.env.PORT || "8080")

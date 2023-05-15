@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 class IndexController {
     private final Info info;
 
-    public IndexController(Info info) {
+    IndexController(Info info) {
         this.info = info;
     }
 

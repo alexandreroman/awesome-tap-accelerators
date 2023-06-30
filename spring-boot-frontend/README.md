@@ -16,15 +16,41 @@ You need the following tools to build and run this app:
 
 - Java Development Kit 17+
 - Maven 3.8+
-- Visual Studio Code or Intellij IDEA
 - Tanzu CLI
 
-## How to run the app?
+## How to run this app?
 
-Run this command to build and run the app:
+Run this command to build and run the app on your workstation:
 
 ```shell
-mvn spring-boot:run
+mvn spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 
 The app is available at http://localhost:8080.
+
+## How to deploy this app?
+
+Run this command to deploy this app to your developer namespace:
+
+```shell
+tanzu apps workload apply -f config/workload.yaml
+```
+
+## How to enable/disable OpenTelemetry?
+
+OpenTelemetry support is included in this app.
+Depending on what you need, you may want to enable/disable OpenTelemetry.
+
+Edit the file [`src/main/resources/application.yaml`](src/main/resources/application.yaml):
+
+```yaml
+management:
+  tracing:
+    # Set to true to forward tracing spans to a local Zipkin instance.
+    enabled: false
+  otlp:
+    metrics:
+      export:
+        # Set to true to forward metrics to a local OpenTelemetry collector.
+        enabled: false
+```

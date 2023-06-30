@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: myapp
+  name: spring-boot-frontend
   description: A frontend app powered by Spring Boot
   tags:
   - java
@@ -9,7 +9,7 @@ metadata:
   - web
   - opentelemetry
   annotations:
-    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=myapp
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=spring-boot-frontend
 spec:
   type: service
   lifecycle: experimental

@@ -9,11 +9,6 @@ accelerator:
   - opentelemetry
 
   options:
-  - name: artifactId
-    inputType: text
-    defaultValue: myapp
-    label: Application artifact name
-    required: true
   - name: groupId
     inputType: text
     defaultValue: com.example
@@ -29,16 +24,12 @@ accelerator:
     dataType: boolean
     defaultValue: false
   imports:
-  - name: live-update
-    expose:
-    - name: liveUpdateIDESupport
-    - name: sourceRepositoryPrefix
   - name: tap-workload
 
 engine:
   let:
   - name: workloadResourceName
-    expression: '#artifactId.toLowerCase()'
+    expression: '#projectName.toLowerCase()'
   chain:
   - merge:
     - include: [ "**" ]
@@ -50,18 +41,18 @@ engine:
         - text: "<groupId>com.vmware.tanzu.tap.accelerators</groupId>"
           with: "'<groupId>' + #groupId + '</groupId>'"
         - text: "<artifactId>spring-boot-frontend</artifactId>"
-          with: "'<artifactId>' + #artifactId + '</artifactId>'"
+          with: "'<artifactId>' + #projectName + '</artifactId>'"
         - text: "<name>Spring Boot Frontend</name>"
           with: "'<name>' + #projectName + '</name>'"
 
   - merge:
     - include: [ "**" ]
-      exclude: [ "config/workload.yaml", "catalog/catalog-info.yaml" ]
-    - include: [ "config/workload.yaml", "catalog/catalog-info.yaml" ]
+      exclude: [ "config/workload.yaml", "catalog/catalog-info.yaml", "Tiltfile" ]
+    - include: [ "config/workload.yaml", "catalog/catalog-info.yaml", "Tiltfile" ]
       chain:
       - type: ReplaceText
         substitutions:
-        - text: "myapp"
+        - text: "spring-boot-frontend"
           with: "#workloadResourceName"
 
   - merge:
@@ -83,12 +74,6 @@ engine:
         substitutions:
         - text: "spring-boot-frontend"
           with: "#workloadResourceName"
-
-  - merge:
-    - type: InvokeFragment
-      reference: live-update
-    - include: [ "**" ]
-      onConflict: UseFirst
 
   - merge:
     - type: InvokeFragment

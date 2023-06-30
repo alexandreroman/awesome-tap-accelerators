@@ -1,4 +1,4 @@
-APP_NAME = 'myapp'
+APP_NAME = 'spring-boot-frontend'
 
 SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='dev.local/' + APP_NAME + '-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')

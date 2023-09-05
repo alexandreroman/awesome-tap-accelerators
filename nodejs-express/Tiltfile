@@ -15,6 +15,7 @@ k8s_custom_deploy(
     live_update=[
         fall_back_on(['package.json']),
         sync('.', '/workspace')
+    ]
 )
 
 k8s_resource(APP_NAME, port_forwards=["8080:8080"],

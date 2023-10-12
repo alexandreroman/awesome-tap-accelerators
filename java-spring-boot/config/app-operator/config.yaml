@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: java-spring-boot-config
+type: Opaque
+stringData:
+  provider: sample
+  type: config
+  app.hello.greetings: Hello %s from Kubernetes!
+---
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ResourceClaim
+metadata:
+  name: java-spring-boot-config
+spec:
+  ref:
+    apiVersion: v1
+    kind: Secret
+    name: java-spring-boot-config

@@ -1,0 +1,391 @@
+accelerator:
+  displayName: Awesome Java Spring Boot
+  description: Spring Boot application using Java 17, including OpenTelemetry support.
+  iconUrl: data:image/png;base64,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
+  tags:
+  - java
+  - spring
+  - web
+  - opentelemetry
+
+  options:
+  - name: groupId
+    inputType: text
+    defaultValue: com.example
+    label: Application group name
+    required: true
+  - name: packageName
+    inputType: text
+    defaultValue: com.example.springboot
+    label: Application root package
+    required: true
+  - name: includeWebUI
+    label: Include a web UI
+    dataType: boolean
+    defaultValue: true
+  - name: includeDatabase
+    label: Include a database
+    dataType: boolean
+    defaultValue: false
+  - name: includeOtel
+    label: Include OpenTelemetry support
+    dataType: boolean
+    defaultValue: false
+  - name: includeOpenAPI
+    label: Include OpenAPI endpoint
+    dataType: boolean
+    defaultValue: false
+  - name: includeNative
+    label: Include GraalVM native image support
+    dataType: boolean
+    defaultValue: false
+
+  imports:
+  - name: tap-workload
+
+engine:
+  let:
+  - name: workloadResourceName
+    expression: '#projectName.toLowerCase()'
+  - name: otelKey
+    expression: '"sidecar.opentelemetry.io/inject"'
+  chain:
+  - merge:
+    - exclude: [ "**/*.java" ]
+    - include: [ "**/*.java" ]
+      let:
+      - name: packageDirectory
+        expression: '#packageName.replace(".", "/")'
+      chain:
+      - type: ReplaceText
+        substitutions:
+        - text: "com.vmware.tanzu.tap.accelerators.springboot"
+          with: "#packageName"
+      - type: RewritePath
+        regex: "src/(?<sourceset>.*)/java/(?<currentpackage>.*/)springboot(?<untouchedpath>.*)"
+        rewriteTo: "'src/' + #sourceset + '/java/' + #packageDirectory + '/' + #untouchedpath"
+
+  - merge:
+    - include: [ "**" ]
+      exclude: [ "pom.xml" ]
+    - include: [ "pom.xml" ]
+      chain:
+      - type: ReplaceText
+        substitutions:
+        - text: "<groupId>com.vmware.tanzu.tap.accelerators</groupId>"
+          with: "'<groupId>' + #groupId + '</groupId>'"
+        - text: "<artifactId>java-spring-boot</artifactId>"
+          with: "'<artifactId>' + #projectName + '</artifactId>'"
+        - text: "<name>Java Spring Boot</name>"
+          with: "'<name>' + #projectName + '</name>'"
+
+  - merge:
+    - include: [ "**" ]
+      exclude: [ "config/workload.yaml", "config/workload-native.yaml", "config/app-operator/config.yaml", "config/app-operator/database.yaml", "catalog/catalog-info.yaml", "Tiltfile", "src/main/resources/application.yaml" ]
+    - include: [ "config/workload.yaml", "config/workload-native.yaml", "config/app-operator/config.yaml", "config/app-operator/database.yaml", "catalog/catalog-info.yaml", "Tiltfile", "src/main/resources/application.yaml" ]
+      chain:
+      - type: ReplaceText
+        substitutions:
+        - text: "java-spring-boot"
+          with: "#workloadResourceName"
+
+  - merge:
+    - include: [ "**" ]
+      exclude: [ "src/main/resources/application-dev.yaml" ]
+    - include: [ "src/main/resources/application-dev.yaml" ]
+      chain:
+      - type: ReplaceText
+        substitutions:
+        - text: "com.vmware.tanzu"
+          with: "#packageName"
+
+  - condition: "#includeOtel == true"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "src/main/resources/application.yaml" ]
+    - include: [ "src/main/resources/application.yaml" ]
+      chain:
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.yaml.ChangeValue
+        options:
+          oldKeyPath: '"$.management.tracing.enabled"'
+          value: "true"
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.yaml.ChangeValue
+        options:
+          oldKeyPath: '"$.management.otlp.metrics.export.enabled"'
+          value: "true"
+
+  - condition: "#includeOtel == false"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "src/main/resources/application.yaml", "src/main/resources/application-dev.yaml" ]
+    - include: [ "src/main/resources/application.yaml", "src/main/resources/application-dev.yaml" ]
+      chain:
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.yaml.DeleteKey
+        options:
+          keyPath: '"$.management.tracing"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.yaml.DeleteKey
+        options:
+          keyPath: '"$.management.metrics"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.yaml.DeleteKey
+        options:
+          keyPath: '"$.management.otlp"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.yaml.DeleteKey
+        options:
+          keyPath: '"$.logging.pattern"'
+
+  - condition: "#includeOtel == false"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "config/workload.yaml", "config/workload-native.yaml" ]
+    - include: [ "config/workload.yaml", "config/workload-native.yaml" ]
+      chain:
+      - type: ReplaceText
+        substitutions:
+        - text: "      sidecar.opentelemetry.io/inject: 'true'\n"
+          with: "''"
+
+  - condition: "#includeOtel == false"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "catalog/catalog-info.yaml" ]
+    - include: [ "catalog/catalog-info.yaml" ]
+      chain:
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.yaml.DeleteKey
+        options:
+          keyPath: '"$.metadata.tags[3]"'
+
+  - condition: "#includeDatabase == false"
+    merge:
+    - exclude: [ "**/contributors/*.java", "compose.yaml", "config/app-operator/database.yaml" ]
+
+  - condition: "#includeWebUI == false"
+    merge:
+    - exclude: [ "**/info/*.java", "src/main/resources/static/**", "src/main/resources/templates/**" ]
+
+  - condition: "#includeWebUI == false"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "src/main/java/**/IndexController.java" ]
+    - include: [ "src/main/java/**/IndexController.java" ]
+      chain:
+      - type: ReplaceText
+        substitutions:
+        - text: "redirect:/info"
+          with: "'redirect:/hello'"
+
+  - condition: "#includeDatabase == false"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "src/main/resources/application.yaml" ]
+    - include: [ "src/main/resources/application.yaml" ]
+      chain:
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.yaml.DeleteKey
+        options:
+          keyPath: '"$.spring.jpa"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.yaml.DeleteKey
+        options:
+          keyPath: '"$.app.github"'
+
+  - condition: "#includeDatabase == false"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "config/workload.yaml", "config/workload-native.yaml" ]
+    - include: [ "config/workload.yaml", "config/workload-native.yaml" ]
+      chain:
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.yaml.DeleteKey
+        options:
+          keyPath: '"$.spec.serviceClaims[1]"'
+
+  - condition: "#includeDatabase == false"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "pom.xml" ]
+    - include: [ "pom.xml" ]
+      chain:
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"org.springframework.boot"'
+          artifactId: '"spring-boot-docker-compose"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"org.springframework.boot"'
+          artifactId: '"spring-boot-starter-webflux"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"org.springframework.boot"'
+          artifactId: '"spring-boot-starter-data-jpa"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"org.postgresql"'
+          artifactId: '"postgresql"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"net.ttddyy.observation"'
+          artifactId: '"datasource-micrometer-spring-boot"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"net.ttddyy.observation"'
+          artifactId: '"datasource-micrometer-spring-boot"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"org.springframework.boot"'
+          artifactId: '"spring-boot-testcontainers"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"org.testcontainers"'
+          artifactId: '"junit-jupiter"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"org.testcontainers"'
+          artifactId: '"postgresql"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"org.springframework.cloud"'
+          artifactId: '"spring-cloud-starter-contract-stub-runner"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemovePlugin
+        options:
+          groupId: '"org.hibernate.orm.tooling"'
+          artifactId: '"hibernate-enhance-maven-plugin"'
+      - type: ReplaceText
+        regex:
+          pattern: "(\\s+)(<dependencyManagement>)([\\s\\S]+)(</dependencyManagement>)"
+          with: "''"
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveProperty
+        options:
+          propertyName: '"spring-cloud.version"'
+
+  - condition: "#includeWebUI == false"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "pom.xml" ]
+    - include: [ "pom.xml" ]
+      chain:
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"org.springframework.boot"'
+          artifactId: '"spring-boot-starter-thymeleaf"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"org.webjars"'
+          artifactId: '"bootstrap"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"org.webjars"'
+          artifactId: '"jquery"'
+
+  - condition: "#includeOtel == false"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "pom.xml" ]
+    - include: [ "pom.xml" ]
+      chain:
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"io.micrometer"'
+          artifactId: '"micrometer-registry-otlp"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"io.micrometer"'
+          artifactId: '"micrometer-tracing-bridge-otel"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"io.opentelemetry"'
+          artifactId: '"opentelemetry-exporter-otlp"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"net.ttddyy.observation"'
+          artifactId: '"datasource-micrometer-spring-boot"'
+      - type: ReplaceText
+        regex:
+          pattern: "(\\s+)(<executions>)(\\s+)(<execution>)(\\s+)(<id>build-info</id>)([\\s\\S]+)(</execution>)(\\s+)(</executions>)"
+          with: "''"
+
+  - condition: "#includeOtel == false"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "pom.xml" ]
+    - include: [ "pom.xml" ]
+      chain:
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"org.springdoc"'
+          artifactId: '"springdoc-openapi-starter-webmvc-ui"'
+
+  - condition: "#includeOpenAPI == false"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "config/workload.yaml", "config/workload-native.yaml" ]
+    - include: [ "config/workload.yaml", "config/workload-native.yaml" ]
+      chain:
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.yaml.DeleteKey
+        options:
+          keyPath: '"$.spec.params[2]"'
+
+  - condition: "#includeOpenAPI == false"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "src/main/resources/application.yaml" ]
+    - include: [ "src/main/resources/application.yaml" ]
+      chain:
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.yaml.DeleteKey
+        options:
+          keyPath: '"$.springdoc"'
+
+  - condition: "#includeNative == false"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "config/workload-native.yaml" ]
+
+  - condition: "#includeNative == false"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "pom.xml" ]
+    - include: [ "pom.xml" ]
+      chain:
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemovePlugin
+        options:
+          groupId: '"org.graalvm.buildtools"'
+          artifactId: '"native-maven-plugin"'
+      - type: ReplaceText
+        regex:
+          pattern: "(\\s+)(<profiles>)[\\s\\S]+(</profiles>)"
+          with: "''"
+
+  - merge:
+    - type: InvokeFragment
+      reference: tap-workload
+    - include: [ "**" ]
+    onConflict: UseFirst

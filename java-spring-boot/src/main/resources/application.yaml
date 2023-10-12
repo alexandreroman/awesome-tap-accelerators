@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: java-spring-boot
+  jpa:
+    generate-ddl: true
+
+management:
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+    tags:
+      application: ${spring.application.name}
+      service: ${spring.application.name}
+      source: ${spring.application.name}-${random.uuid}
+  tracing:
+    # Set to true to forward tracing spans to a local OpenTelemetry collector.
+    enabled: false
+    sampling:
+      probability: 0.1
+  otlp:
+    metrics:
+      export:
+        # Set to true to forward metrics to a local OpenTelemetry collector.
+        enabled: false
+        step: 30s
+logging:
+  pattern:
+    # Include tracing id in log entries.
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+
+springdoc:
+  api-docs:
+    path: /api/openapi
+
+server:
+  port: ${PORT:8080}
+
+app:
+  hello:
+    greetings: Hello %s!
+  github:
+    owner: spring-projects
+    repo: spring-boot
+    api:
+      url: https://api.github.com

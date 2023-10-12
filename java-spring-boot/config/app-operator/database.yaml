@@ -1,0 +1,7 @@
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ClassClaim
+metadata:
+  name: java-spring-boot-db
+spec:
+  classRef:
+    name: postgresql-unmanaged

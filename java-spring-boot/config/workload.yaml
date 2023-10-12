@@ -1,0 +1,59 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: java-spring-boot
+  labels:
+    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: 'true'
+    app.kubernetes.io/part-of: java-spring-boot
+spec:
+  source:
+    git:
+      url: <https URL for your generated project's Git repository>
+      ref:
+        branch: main
+  build:
+    env:
+    - name: BP_JVM_VERSION
+      value: '17'
+  resources:
+    requests:
+      cpu: 1
+      memory: 1Gi
+    limits:
+      memory: 1Gi
+  params:
+  - name: annotations
+    value:
+      sidecar.opentelemetry.io/inject: 'true'
+      autoscaling.knative.dev/minScale: '0'
+      autoscaling.knative.dev/maxScale: '3'
+      autoscaling.knative.dev/window: '120s'
+      autoscaling.knative.dev/target: '5'
+      autoscaling.knative.dev/metric: rps
+  - name: testing_pipeline_matching_labels
+    value:
+      apps.tanzu.vmware.com/pipeline: test
+      apps.tanzu.vmware.com/language: java
+  - name: api_descriptor
+    value:
+      type: openapi
+      location:
+        path: /api/openapi
+      owner: default/default-team
+      system: default/java-spring-boot
+      description: java-spring-boot API
+  env:
+  - name: SPRING_CONFIG_IMPORT
+    value: optional:configtree:${SERVICE_BINDING_ROOT}/config/
+  serviceClaims:
+  - name: config
+    ref:
+      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+      kind: ResourceClaim
+      name: java-spring-boot-config
+  - name: db
+    ref:
+      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+      kind: ClassClaim
+      name: java-spring-boot-db

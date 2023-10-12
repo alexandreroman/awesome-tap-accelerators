@@ -1,0 +1,29 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: node-express
+  labels:
+    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: "true"
+    app.kubernetes.io/part-of: node-express
+spec:
+  source:
+    git:
+      url: <https URL for your generated project's Git repository>
+      ref:
+        branch: main
+  resources:
+    requests:
+      cpu: 500m
+      memory: 256Mi
+    limits:
+      memory: 256Mi
+  params:
+  - name: annotations
+    value:
+      sidecar.opentelemetry.io/inject: 'true'
+      autoscaling.knative.dev/minScale: '0'
+      autoscaling.knative.dev/maxScale: '3'
+      autoscaling.knative.dev/window: '60s'
+      autoscaling.knative.dev/target: '20'
+      autoscaling.knative.dev/metric: rps

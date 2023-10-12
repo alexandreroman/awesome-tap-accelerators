@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: node-express
+  description: A Node.js Express app serving a Bootstrap backed UI
+  tags:
+  - node
+  - express
+  - web
+  - opentelemetry
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=nodejs-express
+spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team

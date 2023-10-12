@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: java-spring-boot
+  description: A Spring Boot app using Java 17
+  tags:
+  - java
+  - spring
+  - web
+  - opentelemetry
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=java-spring-boot
+spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team

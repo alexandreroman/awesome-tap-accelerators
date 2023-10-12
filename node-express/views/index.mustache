@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Node.js Express on TAP</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/images/nodejs.png" alt="NodeJS" width="30" height="33"
+                 class="d-inline-block align-text-top"> Node.js Express</a>
+        <span class="navbar-text">
+            <span>Powered by</span>
+            <a href="https://tanzu.vmware.com/application-platform">
+                <img src="/images/tap.png" width="145" height="38"
+                     alt="VMware Tanzu Application Platform"/></a>
+        </span>
+    </div>
+</nav>
+
+<div class="container py-4">
+    <div id="banner" class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">🥳 Congratulations!</h1>
+            <p class="col-md-8 fs-4">Your <strong>Node.js Express</strong> app now runs on
+                VMware Tanzu&nbsp;Application&nbsp;Platform.</p>
+        </div>
+    </div>
+
+    <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+            <div class="h-100 p-5 text-bg-dark rounded-3">
+                <h2>⚡ Your application</h2>
+                <ul id="appInfo">
+                    <li><span class="text-white-50">Name:</span>
+                        <span class="text-warning font-monospace">{{ appName }}</span>
+                    </li>
+                    <li><span class="text-white-50">Version:</span>
+                        <span class="text-warning font-monospace">{{ appVersion }}</span>
+                    </li>
+                    <li><span class="text-white-50">NodeJS version:</span>
+                        <span class="text-warning font-monospace">{{ nodeVersion }}</span>
+                    </li>
+                    <li><span class="text-white-50">IP Address:</span>
+                        <span class="text-warning font-monospace">{{ ipAddress }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-light border rounded-3">
+                <h2>⏭️ What's next?</h2>
+                <p>Follow these guides to learn how TAP can simplify your Kubernetes developer experience.</p>
+                <a href="https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.6/tap/getting-started.html"
+                   class="btn btn-outline-secondary" target="_" role="button">Getting started</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/jquery.slim.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

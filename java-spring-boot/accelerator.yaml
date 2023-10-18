@@ -297,6 +297,10 @@ engine:
         options:
           groupId: '"org.webjars"'
           artifactId: '"jquery"'
+      - type: ReplaceText
+        regex:
+          pattern: "(\\s+)(<executions>)(\\s+)(<execution>)(\\s+)(<id>build-info</id>)([\\s\\S]+)(</execution>)(\\s+)(</executions>)"
+          with: "''"
 
   - condition: "#includeOtel == false"
     merge:
@@ -324,10 +328,6 @@ engine:
         options:
           groupId: '"net.ttddyy.observation"'
           artifactId: '"datasource-micrometer-spring-boot"'
-      - type: ReplaceText
-        regex:
-          pattern: "(\\s+)(<executions>)(\\s+)(<execution>)(\\s+)(<id>build-info</id>)([\\s\\S]+)(</execution>)(\\s+)(</executions>)"
-          with: "''"
 
   - condition: "#includeOtel == false"
     merge:

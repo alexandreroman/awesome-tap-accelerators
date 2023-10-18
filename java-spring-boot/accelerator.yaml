@@ -305,7 +305,7 @@ engine:
   - condition: "#includeOtel == false"
     merge:
     - include: [ "**" ]
-      exclude: [ "pom.xml" ]
+      exclude: [ "pom.xml", "**/InfoMetrics.java" ]
     - include: [ "pom.xml" ]
       chain:
       - type: OpenRewriteRecipe

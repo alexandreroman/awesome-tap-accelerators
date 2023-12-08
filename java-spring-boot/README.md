@@ -50,17 +50,17 @@ mvn -Pnative native:compile
 
 ## How to deploy this app?
 
-Run this command to deploy this app to your developer namespace:
-
-```shell
-tanzu apps workload apply -f config/workload.yaml
-```
-
 Run this command to deploy additional components
 (such as app configuration or database instance):
 
 ```shell
 kubectl apply -f config/app-operator
+```
+
+Run this command to deploy this app to your developer namespace:
+
+```shell
+tanzu apps workload apply -f config/workload.yaml
 ```
 
 Run this command to build and deploy a native image (powered by GraalVM):

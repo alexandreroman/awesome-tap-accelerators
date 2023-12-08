@@ -5,14 +5,16 @@ spring:
     generate-ddl: true
 
 management:
-  metrics:
-    distribution:
-      percentiles-histogram:
-        http.server.requests: true
-    tags:
+  observations:
+    key-values: &tags
       application: ${spring.application.name}
       service: ${spring.application.name}
       source: ${spring.application.name}-${random.uuid}
+  metrics:
+    tags: *tags
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
   tracing:
     # Set to true to forward tracing spans to a local OpenTelemetry collector.
     enabled: false
@@ -24,10 +26,6 @@ management:
         # Set to true to forward metrics to a local OpenTelemetry collector.
         enabled: false
         step: 30s
-logging:
-  pattern:
-    # Include tracing id in log entries.
-    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
 
 springdoc:
   api-docs:

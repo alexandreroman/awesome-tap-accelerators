@@ -147,7 +147,8 @@ engine:
       chain:
       - type: ReplaceText
         substitutions:
-        - text: "      sidecar.opentelemetry.io/inject: 'true'\n"
+        - text: "      sidecar.opentelemetry.io/inject: 'true'
+"
           with: "''"
 
   - condition: "#includeOtel == false"
@@ -217,11 +218,6 @@ engine:
         options:
           groupId: '"org.springframework.boot"'
           artifactId: '"spring-boot-docker-compose"'
-      - type: OpenRewriteRecipe
-        recipe: org.openrewrite.maven.RemoveDependency
-        options:
-          groupId: '"org.springframework.boot"'
-          artifactId: '"spring-boot-starter-webflux"'
       - type: OpenRewriteRecipe
         recipe: org.openrewrite.maven.RemoveDependency
         options:
@@ -347,6 +343,10 @@ engine:
       exclude: [ "config/workload.yaml", "config/workload-native.yaml" ]
     - include: [ "config/workload.yaml", "config/workload-native.yaml" ]
       chain:
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.yaml.DeleteKey
+        options:
+          keyPath: '"$.metadata.labels[2]"'
       - type: OpenRewriteRecipe
         recipe: org.openrewrite.yaml.DeleteKey
         options:

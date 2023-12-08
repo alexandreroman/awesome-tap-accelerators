@@ -1,22 +1,15 @@
 package com.vmware.tanzu.tap.accelerators.springboot.info;
 
 import io.micrometer.core.instrument.Gauge;
-import io.micrometer.core.instrument.MeterRegistry;
-import org.springframework.stereotype.Component;
+import io.micrometer.core.instrument.binder.MeterBinder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-@Component
+@Configuration(proxyBeanMethods = false)
 class InfoMetrics {
-    private final Info info;
-    private final MeterRegistry reg;
-
-    InfoMetrics(Info info, MeterRegistry reg) {
-        this.info = info;
-        this.reg = reg;
-        init();
-    }
-
-    private void init() {
-        Gauge.builder("app.info", () -> 1)
+    @Bean
+    MeterBinder appInfo(Info info) {
+        return registry -> Gauge.builder("app.info", () -> 1)
                 .baseUnit("instance")
                 .description("App info")
                 .tags("groupId", info.groupId(),
@@ -25,6 +18,6 @@ class InfoMetrics {
                         "springBootProfiles", info.springBootProfiles(),
                         "springBootVersion", info.springBootVersion(),
                         "javaVersion", info.javaVersion())
-                .register(reg);
+                .register(registry);
     }
 }

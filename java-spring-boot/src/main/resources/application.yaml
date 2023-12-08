@@ -16,16 +16,26 @@ management:
       percentiles-histogram:
         http.server.requests: true
   tracing:
-    # Set to true to forward tracing spans to a local OpenTelemetry collector.
-    enabled: false
     sampling:
       probability: 0.1
   otlp:
     metrics:
       export:
-        # Set to true to forward metrics to a local OpenTelemetry collector.
-        enabled: false
         step: 30s
+        url: http://localhost:4318/v1/metrics
+    tracing:
+      endpoint: http://localhost:4318/v1/traces
+
+logging:
+  level:
+    io:
+      micrometer:
+        registry:
+          otlp: off
+      opentelemetry:
+        exporter:
+          internal:
+            http: off
 
 springdoc:
   api-docs:

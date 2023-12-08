@@ -133,11 +133,15 @@ engine:
       - type: OpenRewriteRecipe
         recipe: org.openrewrite.yaml.DeleteKey
         options:
+          keyPath: '"$.management.observations"'
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.yaml.DeleteKey
+        options:
           keyPath: '"$.management.otlp"'
       - type: OpenRewriteRecipe
         recipe: org.openrewrite.yaml.DeleteKey
         options:
-          keyPath: '"$.logging.pattern"'
+          keyPath: '"$.logging.level.io"'
 
   - condition: "#includeOtel == false"
     merge:
@@ -351,6 +355,10 @@ engine:
         recipe: org.openrewrite.yaml.DeleteKey
         options:
           keyPath: '"$.spec.params[2]"'
+      - type: ReplaceText
+        regex:
+          pattern: "(apis.apps.tanzu.vmware.com/register-api: 'true')[\\s]+"
+          with: "''"
 
   - condition: "#includeOpenAPI == false"
     merge:
@@ -362,6 +370,18 @@ engine:
         recipe: org.openrewrite.yaml.DeleteKey
         options:
           keyPath: '"$.springdoc"'
+
+  - condition: "#includeOpenAPI == false"
+    merge:
+    - include: [ "**" ]
+      exclude: [ "pom.xml" ]
+    - include: [ "pom.xml" ]
+      chain:
+      - type: OpenRewriteRecipe
+        recipe: org.openrewrite.maven.RemoveDependency
+        options:
+          groupId: '"org.springdoc"'
+          artifactId: '"springdoc-openapi-starter-webmvc-ui"'
 
   - condition: "#includeNative == false"
     merge:

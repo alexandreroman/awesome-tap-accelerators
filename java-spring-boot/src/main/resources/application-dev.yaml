@@ -8,10 +8,5 @@ management:
       exposure:
         include: "*"
   tracing:
-    enabled: false
     sampling:
       probability: 1
-  otlp:
-    metrics:
-      export:
-        enabled: false

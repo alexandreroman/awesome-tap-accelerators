@@ -68,22 +68,3 @@ Run this command to build and deploy a native image (powered by GraalVM):
 ```shell
 tanzu apps workload apply -f config/workload-native.yaml
 ```
-
-## How to enable/disable OpenTelemetry?
-
-OpenTelemetry support is included in this app.
-Depending on what you need, you may want to enable/disable OpenTelemetry.
-
-Edit the file [`src/main/resources/application.yaml`](src/main/resources/application.yaml):
-
-```yaml
-management:
-  tracing:
-    # Set to true to forward tracing spans to a local Zipkin instance.
-    enabled: false
-  otlp:
-    metrics:
-      export:
-        # Set to true to forward metrics to a local OpenTelemetry collector.
-        enabled: false
-```

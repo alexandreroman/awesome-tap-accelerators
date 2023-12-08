@@ -10,7 +10,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 @Configuration(proxyBeanMethods = false)
-class InfoConfiguration {
+class InfoConfig {
     @Bean
     Info info(BuildProperties buildProperties, Environment env) throws UnknownHostException {
         final var springBootProfiles = env.getActiveProfiles().length == 0

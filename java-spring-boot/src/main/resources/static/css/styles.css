@@ -10,7 +10,7 @@
 }
 
 #appInfo {
-    list-style-type: square;
+    list-style-type: none;
     overflow: scroll;
 }
 

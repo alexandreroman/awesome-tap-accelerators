@@ -63,6 +63,12 @@
           <li><span class="text-white-50">IP Address:</span>
             <span class="text-warning font-monospace" th:text="${app.ipAddress}">springProfiles</span>
           </li>
+          <li><span class="text-white-50">Data Source:</span>
+            <span class="text-warning font-monospace">
+              <span th:text="${app.dataSource}" th:if="${app.dataSource}">dataSource</span>
+              <span th:unless="${app.dataSource}">none</span>
+            </span>
+          </li>
         </ul>
       </div>
     </div>

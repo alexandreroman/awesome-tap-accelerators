@@ -7,6 +7,7 @@ record Info(
         String javaVersion,
         String springBootVersion,
         String springBootProfiles,
-        String ipAddress
+        String ipAddress,
+        boolean runningInKubernetes
 ) {
 }

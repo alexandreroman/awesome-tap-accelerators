@@ -1,6 +1,7 @@
 package com.vmware.tanzu.tap.accelerators.springboot.info;
 
 import org.springframework.boot.SpringBootVersion;
+import org.springframework.boot.cloud.CloudPlatform;
 import org.springframework.boot.info.BuildProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +25,8 @@ class InfoConfig {
                 System.getProperty("java.version"),
                 SpringBootVersion.getVersion(),
                 springBootProfiles,
-                InetAddress.getLocalHost().getHostAddress()
+                InetAddress.getLocalHost().getHostAddress(),
+                CloudPlatform.KUBERNETES.isActive(env)
         );
     }
 }

@@ -45,8 +45,6 @@ server:
   port: ${PORT:8080}
 
 app:
-  info:
-    running-in-kubernetes: false
   hello:
     greetings: Hello %s!
   github:
@@ -54,14 +52,3 @@ app:
     repo: spring-boot
     api:
       url: https://api.github.com
-
----
-
-spring:
-  config:
-    activate:
-      on-cloud-platform: kubernetes
-
-app:
-  info:
-    running-in-kubernetes: true

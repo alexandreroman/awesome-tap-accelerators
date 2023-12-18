@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" data-bs-theme="light">
 <head>
-  <title>Spring Boot on TAP</title>
+  <title th:if="${runningInKubernetes}">Spring Boot on TAP</title>
+  <title th:unless="${runningInKubernetes}">Spring Boot</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.css}"/>
@@ -14,7 +15,7 @@
     <a class="navbar-brand" th:href="@{/}">
       <img th:src="@{/images/spring-boot.png}" alt="Spring Boot" width="30" height="27"
            class="d-inline-block align-text-top"> Spring Boot</a>
-    <span class="navbar-text">
+    <span class="navbar-text p-0" th:if="${runningInKubernetes}">
             <span class="small">Powered by</span>
             <a href="https://tanzu.vmware.com/application-platform">
                 <img th:src="@{/images/tap.png}" width="145" height="38"
@@ -28,8 +29,10 @@
     <div id="banner" class="col-12 py-2 rounded-3">
       <div class="container-fluid">
         <h1 class="display-5 fw-bold">🥳 Congratulations!</h1>
-        <p class="col-12 fs-4">Your <strong>Spring Boot</strong> app now runs on
-          VMware Tanzu&nbsp;Application&nbsp;Platform.</p>
+        <p class="col-12 fs-4">
+          <span th:if="${runningInKubernetes}">Your <strong>Spring Boot</strong> app now runs on VMware Tanzu Application Platform.</span>
+          <span th:unless="${runningInKubernetes}">Your <strong>Spring Boot</strong> app is up and running.</span>
+        </p>
       </div>
     </div>
   </div>
@@ -66,12 +69,19 @@
     <div class="col-lg-6 mt-lg-3 mb-3">
       <div class="h-100 p-4 bg-light border rounded-3">
         <h2>⏭️ What's next?</h2>
-        <p>Follow these guides to learn how TAP can simplify your Kubernetes developer experience.</p>
-        <a href="https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.7/tap/getting-started.html"
-           class="btn btn-outline-secondary" target="_" role="button">Getting started</a>
-        <a
-          href="https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.7/tap/getting-started-about-consuming-services.html"
-          class="btn btn-outline-secondary" target="_" role="button">Consume services</a>
+        <div th:if="${runningInKubernetes}">
+          <p>Follow these guides to learn how TAP can simplify your Kubernetes developer experience.</p>
+          <a href="https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.7/tap/getting-started.html"
+             class="btn btn-outline-secondary" target="_" role="button">Getting started</a>
+          <a
+            href="https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.7/tap/getting-started-about-consuming-services.html"
+            class="btn btn-outline-secondary" target="_" role="button">Consume services</a>
+        </div>
+        <div th:unless="${runningInKubernetes}">
+          <p>Use VMware Tanzu Application Platform to deploy this app to Kubernetes.</p>
+          <a href="https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.7/tap/getting-started-deploy-first-app.html"
+             class="btn btn-outline-secondary" target="_" role="button">Deploy your first app</a>
+        </div>
       </div>
     </div>
   </div>

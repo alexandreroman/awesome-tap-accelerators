@@ -1,7 +1,7 @@
 # Welcome to Awesome TAP Accelerators! 🌟
 
 This repository is a collection of curated
-[accelerators](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.6/tap/tap-gui-plugins-application-accelerator.html)
+[accelerators](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.7/tap/tap-gui-plugins-application-accelerator.html)
 (aka project templates) for
 [VMware Tanzu Application Platform](https://tanzu.vmware.com/application-platform).
 
@@ -10,7 +10,10 @@ This repository is a collection of curated
 
 ## How to use it?
 
-Accelerators are defined in [awesome-tap-accelerators.yaml](awesome-tap-accelerators.yaml).
+Accelerators are defined in the [accelerators](accelerators) directory.
+
+Depending on your configuration, you may have to create your own version of these
+manifests (for instance: adding Git credentials).
 
 Add this configuration block in your `tap-values.yaml`:
 
@@ -20,6 +23,7 @@ accelerator:
     enable: true
     git:
       url: https://github.com/alexandreroman/awesome-tap-accelerators
+      sub_path: accelerators
       ref: origin/main
 ```
 

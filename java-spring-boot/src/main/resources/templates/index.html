@@ -42,13 +42,13 @@
       <div class="h-100 p-4 bg-dark rounded-3" data-bs-theme="dark">
         <h2 class="text-white">⚡ Your application</h2>
         <ul id="appInfo" class="m-0">
-          <li><span class="text-white-50">GroupId:</span>
+          <li th:if="${app.groupId}"><span class="text-white-50">GroupId:</span>
             <span class="text-warning font-monospace" th:text="${app.groupId}">groupId</span>
           </li>
-          <li><span class="text-white-50">ArtifactId:</span>
+          <li th:if="${app.artifactId}"><span class="text-white-50">ArtifactId:</span>
             <span class="text-warning font-monospace" th:text="${app.artifactId}">artifactId</span>
           </li>
-          <li><span class="text-white-50">Version:</span>
+          <li th:if="${app.version}"><span class="text-white-50">Version:</span>
             <span class="text-warning font-monospace" th:text="${app.version}">appVersion</span>
           </li>
           <li><span class="text-white-50">Spring Boot Profiles:</span>

@@ -31,16 +31,17 @@ class InfoConfig {
     }
 
     @Bean
-    Info info(BuildProperties buildProperties, Environment env,
-              @Autowired(required = false) DataSource dataSource) throws UnknownHostException {
+    Info info(Environment env,
+              @Autowired(required = false) @Nullable BuildProperties buildProperties,
+              @Autowired(required = false) @Nullable DataSource dataSource) throws UnknownHostException {
         final var springBootProfiles = env.getActiveProfiles().length == 0
                 ? "default"
                 : String.join(",", env.getActiveProfiles());
 
         return new Info(
-                buildProperties.getGroup(),
-                buildProperties.getArtifact(),
-                buildProperties.getVersion(),
+                buildProperties != null ? buildProperties.getGroup() : null,
+                buildProperties != null ? buildProperties.getArtifact() : null,
+                buildProperties != null ? buildProperties.getVersion() : null,
                 System.getProperty("java.version"),
                 SpringBootVersion.getVersion(),
                 springBootProfiles,

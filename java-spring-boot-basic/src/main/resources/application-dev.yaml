@@ -1,0 +1,9 @@
+logging:
+  level:
+    com.vmware.tanzu: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

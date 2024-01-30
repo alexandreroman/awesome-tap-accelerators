@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: java-spring-boot-basic
+  description: A basic Spring Boot app using Java 17
+  tags:
+  - java
+  - spring
+  - web
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=java-spring-boot-basic
+spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team

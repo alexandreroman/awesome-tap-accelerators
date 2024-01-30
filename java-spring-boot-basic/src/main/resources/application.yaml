@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: java-spring-boot-basic
+
+server:
+  port: ${PORT:8080}
+
+app:
+  hello:
+    greetings: Hello %s!

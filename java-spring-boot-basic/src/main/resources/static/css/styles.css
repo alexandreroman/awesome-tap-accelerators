@@ -1,0 +1,22 @@
+#banner {
+    background-color: white;
+    background-image: url('/images/banner.png');
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
+.navbar-brand img {
+    margin-right: 4px;
+}
+
+#appInfo {
+    list-style-type: none;
+    overflow: scroll;
+}
+
+@media (max-width: 1000px) {
+    #banner {
+        /* Disable banner image when screen size is too small. */
+        background-image: none;
+    }
+}
